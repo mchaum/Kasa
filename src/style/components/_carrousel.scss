@@ -1,0 +1,60 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.carrousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 415px;
+    @include body-margin;
+    position: relative;
+
+    .slides {
+        border-radius: 25px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .slides-hidden {
+        display: none;
+    }
+
+    .arrow {
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .arrow-left {
+        left: 10px;
+        z-index: 1;
+    }
+
+    .arrow-right {
+        right: 10px;
+        z-index: 1;
+    }
+
+    .counter {
+        color: #fff;
+        font-weight: 500;
+        font-size: 18px;
+        position: absolute;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .carrousel-container {
+        height: 255px;
+
+        .arrow {
+            height: 24px;
+        }
+
+        .counter {
+            visibility: hidden;
+        }
+    } 
+}
